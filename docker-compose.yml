@@ -1,4 +1,4 @@
-version: '2'
+version: '3.9'
 
 services:
   mariadb:
@@ -11,6 +11,13 @@ services:
   app:
     image: docker.io/bitnami/laravel:8
     container_name: laravel_app
+    command:
+      - /bin/bash
+      - -c
+      - |
+        php artisan migrate
+        php artisan db:seed
+        php artisan serve --host=0.0.0.0 --port=8000
     ports:
       - '8000:8000'
     environment:
