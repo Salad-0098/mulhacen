@@ -9,7 +9,7 @@ You will need
 
 ## Starting up
 
-Make sure you get everything needed from [here](https://github.com/Salad-0098/prueba/).
+Make sure you get everything needed from [here](https://github.com/Salad-0098/mulhacen/).
 
 Once cloning the repository you should get a `docker-compose.yml` file. Navigate there and run:
 
