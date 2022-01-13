@@ -13,10 +13,17 @@ class DoctorTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
-    {
+    public function test_get_by_id () {
         $response = $this->get('api/doctor/1');
 
         $response->assertStatus(200);
     }
+
+    public function test_get_by_id2 () {
+        $response = $this->get('api/doctor/1');
+
+        $response->assertStatus(200);
+    }
+
+
 }

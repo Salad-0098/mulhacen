@@ -22,12 +22,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/doctor', [DoctorController::class, 'insert']);
-Route::get('/doctor/{id}', [DoctorController::class, 'get']);
 Route::get('/token/{id}', [DoctorController::class, 'generateToken']);
 
 Route::group(['middleware' => 'quickAuth'], function () {
 
+    Route::post('/doctor', [DoctorController::class, 'insert']);
+    Route::get('/doctor/{id}', [DoctorController::class, 'get']);
     Route::get('/doctor/{id}/patients', [DoctorController::class, 'getPatients']);
     Route::put('/doctor', [DoctorController::class, 'update']);
     Route::delete('/doctor/{id}', [DoctorController::class, 'delete']);

@@ -15,14 +15,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $doctor = Doctor::where('name', 'Doctor Juan')->get();
+        $doctor = Doctor::where('name', 'Admin')->get();
         if ($doctor->isEmpty()) {
             DB::table('doctors')->insert([
-                'name' => 'Doctor Juan'
+                'name' => 'Admin'
             ]);
 
             DB::table('patients')->insert([
-                'name' => 'Juan',
+                'name' => 'admin_test',
                 'last_name_1' => 'ln1',
                 'last_name_2' => null,
                 'document' => '45158565C',
