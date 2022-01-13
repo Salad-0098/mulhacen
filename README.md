@@ -7,7 +7,7 @@ You will need
 - Postman (to test the API)
 
 
-## Starting up
+## Starting up 🚀
 
 Make sure you get everything needed from [here](https://github.com/Salad-0098/mulhacen/).
 
@@ -17,7 +17,7 @@ Once cloning the repository you should get a `docker-compose.yml` file. Navigate
 docker-compose up -d
 ```
 
-## Testing the api
+## Testing the api 🐛
 
 You will need to generate a bearer token before doing any request besides creating a doctor, getting a doctor's data or generating the token itself. Make sure you call `$YOUR_URL/token/{doctor_id}`. This will return your api key ***only once***. Make sure you write it down. After that, you can attach it as a bearer token on all requests to proceed testing.
 

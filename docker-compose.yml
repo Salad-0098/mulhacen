@@ -8,6 +8,8 @@ services:
       - ALLOW_EMPTY_PASSWORD=yes
       - MARIADB_USER=base
       - MARIADB_DATABASE=core
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
   app:
     image: docker.io/bitnami/laravel:8
     container_name: laravel_app
@@ -28,4 +30,5 @@ services:
     volumes:
       - './project:/app'
     depends_on:
-      - mariadb
+      mariadb:
+        condition: service_healthy
