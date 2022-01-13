@@ -1,7 +1,7 @@
 
 ## Testing requirements 📝
 
-You will need
+You will need:
 
 - Docker with docker-compose
 - Postman (to test the API)
@@ -19,6 +19,12 @@ docker-compose up -d
 
 ## Testing the api 🐛
 
+### Requests
+
 You will need to generate a bearer token before doing any request besides creating a doctor, getting a doctor's data or generating the token itself. Make sure you call `$YOUR_URL/token/{doctor_id}`. This will return your api key ***only once***. Make sure you write it down. After that, you can attach it as a bearer token on all requests to proceed testing.
 
 There's attached at the root of the repository two files, `Dev.postman_environment.json` and `Prueba.postman_collection.json` for the environment and the endpoints so you can test with Postman more easily.
+
+### Tests
+
+To run the tests, get into the `laravel_app` container's cli and run `php artisan test`. Before doing so you should make sure you set a valid Bearer Token.
