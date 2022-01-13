@@ -14,12 +14,12 @@ class DiagnosisController extends Controller
 
     public function update (Request $request) {
         $post = $request->all();
-        $diagnosis = Diagnosis::find($post['id']);
+        $diagnosis = Diagnosis::findOrFail($post['id']);
         return $diagnosis->update($post);
     }
 
     public function getById ($id) {
-        return Diagnosis::find($id);
+        return Diagnosis::findOrFail($id);
     }
 
     public function getAll (Request $request) {
@@ -27,6 +27,6 @@ class DiagnosisController extends Controller
     }
 
     public function delete ($id) {
-        return Diagnosis::find($id)->delete();
+        return Diagnosis::findOrFail($id)->delete();
     }
 }

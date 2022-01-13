@@ -16,25 +16,25 @@ class PatientController extends Controller
 
     public function update (Request $request) {
         $post = $request->all();
-        $patient = Patient::find($post['id']);
+        $patient = Patient::findOrFail($post['id']);
         return $patient->update($post);
     }
 
     public function getById ($id) {
-        //$patient = Patient::find($id);
+        //$patient = Patient::findOrFail($id);
 
-        return Patient::find($id);
+        return Patient::findOrFail($id);
     }
 
     public function getDoctor ($id) {
-        return Patient::find($id)->doctor;
+        return Patient::findOrFail($id)->doctor;
     }
 
     public function getDiagnoses ($id) {
-        return Patient::find($id)->diagnoses;
+        return Patient::findOrFail($id)->diagnoses;
     }
 
     public function delete ($id) {
-        return Patient::find($id)->delete();
+        return Patient::findOrFail($id)->delete();
     }
 }

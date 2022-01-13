@@ -15,24 +15,24 @@ class DoctorController extends Controller
 
     public function update (Request $request) {
         $post = $request->all();
-        $doctor = Doctor::find($post['id']);
+        $doctor = Doctor::findOrFail($post['id']);
         return $doctor->update($post);
     }
 
     public function get ($id) {
-        return Doctor::find($id);
+        return Doctor::findOrFail($id);
     }
 
     public function delete ($id) {
-        return Doctor::find($id)->delete();
+        return Doctor::findOrFail($id)->delete();
     }
 
     public function getPatients ($id) {
-        return Doctor::find($id)->patients;
+        return Doctor::findOrFail($id)->patients;
     }
 
     public function generateToken ($id) {
-        $doctor = Doctor::find($id);
+        $doctor = Doctor::findOrFail($id);
 
         if (!$doctor || $doctor->api_token !== null) {
             return response('Token already generated', 403);
